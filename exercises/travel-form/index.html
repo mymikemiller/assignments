@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <form>
+
+            <div class="text">First Name:</div>
+            <input type="text" name="first-name" placeholder="First Name"><br>
+
+            <br>
+            <div class="text">Last Name:</div>
+            <input type="text" name="last-name" placeholder="Last Name"><br>
+
+            <br>
+            <div class="text">Age:</div>
+            <input type="number" name="age" placeholder="Age"><br>
+
+            <br>
+            <div class="text">Gender:</div>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="non-binary"> Non-binary
+
+            <br>
+            <br>
+            <div class="text">Destination:</div>
+            <select name="destination">
+            <option value="Berlin">Berlin</option>
+            <option value="Paris">Paris</option>
+            <option value="London">London</option>
+        </select>
+            <br>
+
+            <br>
+            <div class="text">Dietary Restrictions:</div>
+            <input type="checkbox" name="diet" value="Vegetarian">Vegetarian<br>
+            <input type="checkbox" name="diet" value="Vegan">Vegan<br>
+            <input type="checkbox" name="diet" value="Paleo">Paleo<br>
+
+        </form>
+
+        <button onclick="clickSubmit()">Submit</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+body {
+    font-family: SuperMario256;
+    color: rgb(235, 31, 34);
+    d;
+}
+
+@font-face {
+    font-family: "SuperMario256";
+    src: url(SuperMario256.ttf) format("truetype");
+}
+
+p {
+    font-family: sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.yellow {
+    background-color: rgb(255, 218, 9)
+}
+
+.red {
+    background-color: rgb(235, 31, 34);
+}
+
+.center {
+    text-align: center;
+}
+
+#luigi-img {
+    margin: 20px;
+    width: 100%;
+}
+
+#mushroom {
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+}

@@ -1,0 +1,23 @@
+body {
+    padding-top: 225px;
+}
+
+img {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.entry {
+    display: block;
+    clear: both;
+}
+
+.second {}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 65px;
+    }
+}

@@ -1,0 +1,24 @@
+/*p {
+    display: inline-block;
+    width: 30%
+}*/
+
+.column-text {
+    column-count: 3;
+    text-align: justify;
+}
+
+.highlighted {
+    background-color: yellow;
+}
+
+.special {
+    color: royalblue;
+}
+
+.image {
+    float: left;
+    height: auto;
+    max-width: 200px;
+    display: block;
+}

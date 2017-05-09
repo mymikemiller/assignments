@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+body {
+    text-align: center;
+}
+
+.color {
+    border: solid;
+    border-width: 4px;
+    border-color: white;
+    height: 100px;
+}
+
+.salmon {
+    background-color: #F5C6D6;
+}
+
+.pink {
+    background-color: #EE2E84;
+}
+
+.blue {
+    background-color: #85CFD8;
+}
+
+.green {
+    background-color: #8DC63F;
+}
+
+.orange {
+    background-color: #E76E34;
+}
+
+
+/*
+@media(max-width: 768px) {
+    .color {
+        display: block;
+        width: 100%;
+    }
+}
+*/

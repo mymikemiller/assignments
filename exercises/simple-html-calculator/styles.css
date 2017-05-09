@@ -1,0 +1,15 @@
+.operation .answer {
+    display: inline;
+}
+
+.add {
+    color: red;
+}
+
+.subtract {
+    color: green;
+}
+
+.multiply {
+    color: blue;
+}

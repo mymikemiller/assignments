@@ -1,0 +1,52 @@
+{
+    "apetizers": [{
+            "name": "salad",
+            "ingredients": ["lettuce", "spinach"],
+            "description": "A healthy salad"
+        },
+        {
+            "name": "chips",
+            "ingredients": ["chips, duh"],
+            "description": "umm, they're chips"
+            }],
+    "cold sandwiches": [{
+            "name": "italian",
+            "ingredients": ["pepperoni", "cheese"],
+            "description": "The best sub"
+        },
+        {
+            "name": "bologna and cheese",
+            "ingredients": ["bologna", "cheese", "bread"],
+            "description": "it's bologna and cheese, between two slices of bread"
+            }],
+    "hot sandwiches": [{
+            "name": "meatball sub",
+            "ingredients": ["meatballs", "bread"],
+            "description": "kinda sloppy"
+        },
+        {
+            "name": "cheesesteak",
+            "ingredients": ["cheese", "steak"],
+            "description": "It's exactly like it sounds"
+            }],
+    "desserts": [{
+            "name": "strudel",
+            "ingredients": ["probably dough", "probably sugar"],
+            "description": "I honestly don't know what this is"
+        },
+        {
+            "name": "cheesecake",
+            "ingredients": ["cheese", "cake"],
+            "description": "I don't think there's cheese in this..."
+            }],
+    "drinks": [{
+            "name": "coke",
+            "ingredients": "It's a secret",
+            "description": "A delicious beverage"
+        },
+        {
+            "name": "pepsi",
+            "ingredients": "Corn syrup, water",
+            "description": "A not as delicious beverage"
+        }]
+}
