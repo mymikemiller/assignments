@@ -29,6 +29,6 @@ var communists = new Party("Communists");
 var attackingParty = Math.random() < 0.5 ? true : false;
 
 while (attackedParty.population > 0 && attackingParty.population > 0) {
-    var attackedParty = attackingParty = penguins ? communists : penguins;
+    var attackedParty = attackingParty == penguins ? communists : penguins;
     sendNuke(attackedParty, hit, miss);
 }
