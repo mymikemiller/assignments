@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>High Score Haven</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="form">
+        <form>
+            <div class="text">Name:</div>
+            <input type="text" name="name" placeholder="Name"><br>
+
+            <br>
+            <div class="text">Game:</div>
+            <input type="text" name="game" placeholder="Game"><br>
+
+            <br>
+            <div class="text">Date:</div>
+            <input type="date" name="date"><br>
+
+            <br>
+            <div class="text">High Score:</div>
+            <input type="number" name="score" placeholder="0"><br>
+
+            <br>
+            <div class="text">Trash Talk:</div>
+            <input type="checkbox" name="trashTalk">Include randomly selected trash-talking message.<br>
+        </form>
+    </div>
+
+    <button onclick="clickSubmit()">Submit</button>
+
+    <script src="main.js"></script>
+
+    <div class="table">
+        <table id="scoreTable">
+            <tr>
+                <th>Name</th>
+                <th>Game</th>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Message</th>
+            </tr>
+            <tr>
+                <td>Mike</td>
+                <td>Flappy Bird</td>
+                <td>1/1/17</td>
+                <td>300</td>
+                <td>I don't like to trash-talk, but I did pretty well.</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
