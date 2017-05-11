@@ -11,33 +11,58 @@
 
     <div class="form">
         <form>
-            <div class="text">Name:</div>
-            <input type="text" name="name" placeholder="Name"><br>
+            <table>
+                <tr>
+                    <td>
+                        <div class="text">Name:</div>
+                    </td>
+                    <td><input type="text" name="name" placeholder="Name">
+                        <span class="invalidInfo" id="invalidName">Please enter a valid name</span></td>
+                </tr>
 
-            <br>
-            <div class="text">Game:</div>
-            <input type="text" name="game" placeholder="Game"><br>
+                <tr>
+                    <td>
+                        <div class="text">Game:</div>
+                    </td>
+                    <td>
+                        <input type="text" name="game" placeholder="Game">
+                        <span class="invalidInfo" id="invalidGame">Please enter a valid game</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="text">Date:</div>
+                    </td>
+                    <td>
+                        <input type="date" name="date">
+                        <span class="invalidInfo" id="invalidDate">Please enter a valid date</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="text">High Score:</div>
+                    </td>
+                    <td>
+                        <input type="number" name="score" placeholder="0">
+                        <span class="invalidInfo" id="invalidScore">Please enter a valid score</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="text">Trash Talk:</div>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="trashTalk">Include randomly selected trash-talking message.</td>
+                </tr>
 
-            <br>
-            <div class="text">Date:</div>
-            <input type="date" name="date"><br>
-
-            <br>
-            <div class="text">High Score:</div>
-            <input type="number" name="score" placeholder="0"><br>
-
-            <br>
-            <div class="text">Trash Talk:</div>
-            <input type="checkbox" name="trashTalk">Include randomly selected trash-talking message.<br>
+            </table>
         </form>
+
+        <button onclick="clickSubmit()">Submit</button>
     </div>
 
-    <button onclick="clickSubmit()">Submit</button>
 
     <script src="main.js"></script>
 
     <div class="table">
-        <table id="scoreTable">
+        <table id="scoreTable" cellpading="10" border=1>
             <tr>
                 <th>Name</th>
                 <th>Game</th>
@@ -45,15 +70,11 @@
                 <th>Score</th>
                 <th>Message</th>
             </tr>
-            <tr>
-                <td>Mike</td>
-                <td>Flappy Bird</td>
-                <td>1/1/17</td>
-                <td>300</td>
-                <td>I don't like to trash-talk, but I did pretty well.</td>
-            </tr>
         </table>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="main.js"></script>
 
 </body>
 

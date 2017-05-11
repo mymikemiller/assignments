@@ -20,10 +20,23 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: none;
+    transition-property: all;
+    transition-duration: .5s;
+}
+
+.main,
+.exampleImage {
+    box-shadow: 2px 2px 2px #222;
+}
+
+.exampleImage {
+    width: 100%;
+    border-radius: 10px;
 }
 
 .main:hover {
-    border-radius: 0;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #000;
 }
 
 .footer {
@@ -51,16 +64,6 @@ p {
 .italics {
     font-size: 130%;
     font-style: oblique;
-}
-
-.main,
-.exampleImage {
-    box-shadow: 2px 2px 2px #222;
-}
-
-.exampleImage {
-    width: 100%;
-    border-radius: 10px;
 }
 
 @media (min-width: 768px) {

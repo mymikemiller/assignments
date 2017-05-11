@@ -1,0 +1,15 @@
+tr.strikeout {
+    text-decoration: line-through;
+}
+
+.newItem,
+.items {
+    background-color: lightgrey;
+    padding: 10px 10px;
+    border-radius: 6px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.items {
+    margin-top: 20px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mike's Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Item:</h1>
+    <input type="text" name="title" placeholder="Todo Item">
+    <input type="number" name="price" placeholder="0">
+    <input type="text" name="description" placeholder="Description">
+    <input type="checkbox" name="completed" id="completed">
+    <label for="completed">Completed</label>
+    <input type="text" name="image" placeholder="Image URL">
+
+    <button onclick="clickSubmit()">Submit</button>
+
+    <table id="table">
+        <tr>
+            <th>
+                Item
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Completed
+            </th>
+            <th>
+                Image
+            </th>
+        </tr>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

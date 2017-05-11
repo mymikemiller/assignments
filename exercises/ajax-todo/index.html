@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mike's ToDo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <container>
+        <row>
+            <column class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+                <div class="newItem">
+
+                    <h1>New ToDo Item:</h1>
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Price:</label>
+                        <input type="number" class="form-control" id="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+                    <div class="form-group">
+                        <label><input type="checkbox" id="completed" value="">  Completed</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image Url:</label>
+                        <input type="text" class="form-control" id="image">
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="clickSubmit()">Submit</button>
+                </div>
+
+            </column>
+        </row>
+
+        <row>
+            <column class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+
+                <div class="items">
+                    <table id="table">
+                        <tr>
+                            <th>
+                                Item
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Completed
+                            </th>
+                            <th>
+                                Image
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </column>
+        </row>
+    </container>
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
