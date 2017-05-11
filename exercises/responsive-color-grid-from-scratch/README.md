@@ -1,0 +1,1 @@
+Making the color-grid project responsive using bootstrap

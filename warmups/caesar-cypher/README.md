@@ -1,0 +1,1 @@
+logic and for loop practice

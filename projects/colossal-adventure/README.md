@@ -1,0 +1,1 @@
+A text-adventure rpg where the user battles pokemon

@@ -1,0 +1,1 @@
+Basic input and string manipulation

@@ -1,0 +1,1 @@
+Counts the number of times "code" appears in the given string, ignoring the "d"
