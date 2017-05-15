@@ -1,0 +1,1 @@
+Test if a given word is in a given array. This algorithm uses a simple loop (O(n)), but if I were to do this more efficiently, I would use a binary search (O(log(n))).

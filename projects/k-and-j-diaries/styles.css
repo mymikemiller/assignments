@@ -1,0 +1,218 @@
+@font-face {
+    font-family: 'Bebas Neue Regular';
+    src: url('fonts/bebasneue_regular-webfont.eot');
+    src: url('fonts/bebasneue_regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/bebasneue_regular-webfont.woff') format('woff'), url('fonts/bebasneue_regular-webfont.ttf') format('truetype'), url('fonts/bebasneue_regular-webfont.svg#bebas_neue_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Light';
+    src: url('fonts/bebasneue_light-webfont.eot');
+    src: url('fonts/bebasneue_light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/bebasneue_light-webfont.woff2') format('woff2'), url('fonts/bebasneue_light-webfont.woff') format('woff'), url('fonts/bebasneue_light-webfont.ttf') format('truetype'), url('fonts/bebasneue_light-webfont.svg#bebas_neuelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "Avenir";
+}
+
+.navbar {
+    background: white;
+    border-bottom-color: white;
+    height: 130px;
+}
+
+.dropdown {
+    display: inline;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    font-family: Avenir, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin-top: 10px;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.dropdown-menu li a {
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgb(243, 195, 172)
+}
+
+
+/* Fade transition for carousel items */
+
+.carousel .item {
+    left: 0 !important;
+    -webkit-transition: opacity .4s;
+    /*adjust timing here */
+    -moz-transition: opacity .4s;
+    -o-transition: opacity .4s;
+    transition: opacity .4s;
+}
+
+.carousel-control {
+    background-image: none !important;
+    /* remove background gradients on controls */
+}
+
+
+/* Fade controls with items */
+
+.next.left,
+.prev.right {
+    opacity: 1;
+    z-index: 1;
+}
+
+.active.left,
+.active.right {
+    opacity: 0;
+    z-index: 2;
+}
+
+#emailForm {
+    height: 70px;
+    background-color: rgb(254, 231, 221);
+    text-align: center;
+    padding-top: 20px;
+    border-style: none;
+}
+
+#emailInput {
+    width: 300px;
+}
+
+.content {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.side {
+    height: 500px;
+    background-color: red;
+}
+
+.date,
+.related,
+.sideSection {
+    border-color: lightgrey;
+    border-style: solid;
+    margin: auto;
+    line-height: 0px;
+    width: 290px;
+    padding-bottom: 15px;
+}
+
+.date {
+    border-width: 1px 0px 0px 0px;
+}
+
+.related {
+    border-width: 1px 0px 1px 0px;
+    width: auto;
+}
+
+.sideSection {
+    border-width: 1px 1px 1px 1px;
+}
+
+.sectionTitle+* {
+    padding-top: 40px;
+}
+
+.sectionTitle {
+    background-color: white;
+    color: grey;
+    padding: 0px 5px;
+}
+
+relatedSectionTitle {
+    padding: 0px 0px;
+}
+
+.title {
+    font-family: "avenir";
+}
+
+.contentImage {
+    width: 100%;
+    padding: 10px;
+}
+
+.contentText {
+    text-align: left;
+}
+
+.socialMedia,
+.sideSocialMedia {
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialMedia {
+    padding: 50px 0px;
+}
+
+.sideSocialMedia {
+    padding: 20px 0px;
+    justify-content: center;
+}
+
+.socialMedia i,
+.sideSocialMedia i {
+    padding-right: 25px;
+}
+
+.socialMedia i {
+    color: #f3c3ac;
+}
+
+.relatedImages img {
+    width: 120px;
+    margin: 15px 15px 0px 15px;
+}
+
+.sideSection {
+    margin-top: 50px;
+}
+
+#sideEmailInput {
+    width: 270px;
+    border-style: none;
+    margin: 15px 0px;
+}
+
+#wishlistCarousel {
+    padding: 20px 20px;
+}
+
+.sideSection img {
+    width: 280px;
+}
+
+#instagramText {
+    text-align: center;
+}
+
+#instagramInfo {
+    display: flex;
+}
+
+#instagramProfilePhoto img {
+    width: 50px;
+    border-radius: 50%
+}
+
+#instagramDescription {
+    font-size: 0.9em;
+}
