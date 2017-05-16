@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AngularSetupApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Setup ng-repeat</title>
+</head>
+
+<body ng-controller="AngularSetupController">
+
+    <div ng-repeat="kill in player.kills">{{kill.handle}} (rank {{kill.rank}})
+        <div>&emsp;Clanmembers:</div>
+        <div ng-repeat="clanMember in kill.clan">
+            &emsp;&emsp;{{clanMember}}
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="main.js"></script>
+</body>
+
+</html>

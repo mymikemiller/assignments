@@ -89,7 +89,7 @@
 }
 
 #emailInput {
-    width: 300px;
+    width: 100%;
 }
 
 .content {
@@ -109,7 +109,7 @@
     border-style: solid;
     margin: auto;
     line-height: 0px;
-    width: 290px;
+    width: 100%;
     padding-bottom: 15px;
 }
 
@@ -215,4 +215,12 @@ relatedSectionTitle {
 
 #instagramDescription {
     font-size: 0.9em;
+}
+
+.instagramImage {
+    width: 200px;
+    height: 200px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    float: left;
 }

@@ -1,0 +1,1 @@
+Notes during the Angular lesson. Sets up a basic Angular project.
