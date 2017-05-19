@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BadgeApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Name Badge</title>
+    <!-- the following makes the site responsive on phones -->
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-controller="BadgeController">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+
+                <form id="badgeInput" name="userForm">
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                            <input name="firstNameInput" ng-model="user.firstName" placeholder="First Name" ng-minlength="3" required>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+                            <input ng-model="user.lastName" placeholder="Last Name" ng-minlength="3" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                            <input ng-model="user.email" placeholder="Email" type=email ng-minlength="3" required>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+                            <input ng-model="user.birthplace" placeholder="Place of Birth" ng-minlength="3" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                            <input ng-model="user.phone" placeholder="Phone" type="number" ng-minlength="3" required>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+                            <input ng-model="user.favoriteFood" placeholder="Favorite Food" ng-minlength="3" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <textarea id="aboutInput" ng-model="user.about" placeholder="Tell us about yourself" ng-minlength="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="centerFlex">
+                                <button class="btn btn-sm" ng-click="clickSubmit(user)" ng-disabled="userForm.$invalid">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="row" ng-repeat="badge in badges track by $index">
+
+
+            <div class="col-xs-10 col-xs-offset-1">
+
+                <div class="badge">
+                    <div class="row badgeLabelRow">
+                        <div class="badgeLabel" class="col-xs-12">
+                            <h4>Badge:</h4>
+                        </div>
+                    </div>
+                    <div class="row textRow">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                            Name: {{badge.firstName}}
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+                            Last Name: {{badge.lastName}}
+                        </div>
+                    </div>
+                    <div class="row textRow">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                            Email: {{badge.email}}
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+                            Place of Birth: {{badge.birthPlace}}
+                        </div>
+                    </div>
+                    <div class="row textRow">
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                            Phone Number: {{badge.phone}}
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+                            Favorite Food: {{badge.favoriteFood}}
+                        </div>
+                    </div>
+                    <div class="row textRow">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <textarea id="aboutOutput" readonly>{{badge.about}}</textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+            <script src="main.js"></script>
+</body>
+
+</html>

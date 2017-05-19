@@ -1,0 +1,62 @@
+#badgeInput,
+#badge {
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 2px solid black;
+}
+
+input,
+textarea,
+.textRow {
+    margin: 15px;
+}
+
+#aboutInput,
+#aboutOutput {
+    height: 100px;
+}
+
+button {
+    margin-bottom: 15px !important;
+}
+
+.centerFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.badgeLabelRow {
+    margin: -7px;
+    margin-top: -3px;
+}
+
+.badge {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    font-weight: 400
+}
+
+.badgeLabel {
+    background-color: grey;
+    color: white;
+    text-align: left;
+    border-radius: 7px;
+    padding: 2px;
+}
+
+#badgeTitle {}
+
+textarea.ng-invalid,
+input.ng-invalid {
+    background-color: pink;
+}

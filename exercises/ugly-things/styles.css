@@ -1,0 +1,21 @@
+.uglyImage {
+    width: 200px;
+}
+
+.formRow {
+    background-color: lightblue;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+}
+
+.buttonCol {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.uglies {
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="HitListApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hit List</title>
+    <link rel=stylesheet href="styles.css">
+</head>
+
+<body ng-controller="HitListController">
+
+    <button ng-click="getHitList()">Get HitList</button>
+
+    <div ng-repeat="target in targets">
+
+        <div class="target">
+            <img ng-src="{{target.image}}">
+            <h4>{{target.name}}</h4>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

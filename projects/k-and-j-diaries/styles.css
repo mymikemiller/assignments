@@ -18,6 +18,11 @@
     font-family: "Avenir";
 }
 
+.bebas {
+    font-family: "Bebas Neue Light";
+    font-size: 1.5em;
+}
+
 .navbar {
     background: white;
     border-bottom-color: white;
@@ -80,16 +85,21 @@
     z-index: 2;
 }
 
-#emailForm {
-    height: 70px;
+#emailFormBackground {
     background-color: rgb(254, 231, 221);
-    text-align: center;
+    height: 70px;
     padding-top: 20px;
+}
+
+#emailForm {
+    margin: auto;
     border-style: none;
+    width: 250px;
 }
 
 #emailInput {
     width: 100%;
+    margin: auto;
 }
 
 .content {
@@ -200,6 +210,16 @@ relatedSectionTitle {
     width: 280px;
 }
 
+favoritesSection {
+    margin-bottom: 20px;
+}
+
+.archivesDropdown {
+    border: 1px solid lightgrey;
+    margin-top: 20px;
+    text-align: left;
+}
+
 #instagramText {
     text-align: center;
 }
@@ -220,7 +240,43 @@ relatedSectionTitle {
 .instagramImage {
     width: 200px;
     height: 200px;
-    padding: 0px 0px;
+    padding: px 0px;
     margin: 0px 0px;
     float: left;
+}
+
+#bottomImageStrip {}
+
+#bottomButtons {
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.loadMoreButton {
+    color: white;
+    background-color: rgb(82, 82, 82);
+}
+
+.instagramButton {
+    color: white;
+    background-color: rgb(81, 127, 184);
+}
+
+#footer {
+    background-color: black;
+    color: lightgrey;
+    font-size: 80%;
+    padding: 10px;
+    display: flex;
+}
+
+.footerCompanyName {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #emailForm {
+        margin: 0px 10px 0px 10px;
+        width: 100%;
+    }
 }

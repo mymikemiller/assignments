@@ -1,0 +1,9 @@
+img {
+    width: 300px;
+    display: inline-block;
+}
+
+.target {
+    display: inline;
+    width: 200px;
+}

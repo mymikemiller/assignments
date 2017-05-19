@@ -14,4 +14,6 @@ function resizeInstagramImages() {
     }
     $(".instagramImage").width(newWidth);
     $(".instagramImage").height(newWidth);
+
+    $("#bottomImageStrip").syle.height = newWidth * 2 + 20;
 }
