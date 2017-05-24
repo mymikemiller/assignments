@@ -3,12 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>K & J Diaries</title>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+    <title>K &amp; J Diaries</title>
     <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -86,7 +81,9 @@
     <div id="emailFormBackground">
         <div id="emailForm">
             <form>
-                <input id="emailInput" type="text" placeholder="EMAIL ADDRESS">
+                <div id="emailDiv">
+                    <input id="emailInput" type="text" placeholder="EMAIL ADDRESS"><i class="fa fa-envelope fa-1x emailGlyph" aria-hidden="true"></i>
+                </div>
             </form>
         </div>
     </div>
@@ -246,7 +243,7 @@
     </div>
 
     <!-- footer -->
-    <div class="bebas" id="instagramText">K&J Instagram</div>
+    <div class="bebas" id="instagramText">K&amp;J Instagram</div>
     <br>
     <div id="instagramInfo">
         <div id="instagramProfilePhoto">
@@ -287,15 +284,20 @@
     </div>
 
     <div id="bottomButtons">
-        <button class="btn loadMoreButton">Load More...</button>
-        <button class="btn instagramButton"><i class="fa fa-instagram" aria-hidden="true"></i> Follow on Instagram</button>
+        <button class="btn loadMoreButton bottomButton">Load More...</button>
+        <button class="btn instagramButton bottomButton"><i class="fa fa-instagram" aria-hidden="true"></i> Follow on Instagram</button>
     </div>
 
     <div id="footer">
         <div class="col-xs-6 text-left" id="bottomCredit">Designed and Developed by <span class="footerCompanyName">Verisage</span></div>
-        <div class="col-xs-6 col-xs-offset-6 text-right" id="bottomCopyright">© K & J Diaries 2017. All Rights Reserved</div>
+        <div class="col-xs-6 col-xs-offset-6 text-right" id="bottomCopyright">© K &amp; J Diaries 2017. All Rights Reserved</div>
     </div>
 
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
     <script src=" main.js "></script>
 </body>
 

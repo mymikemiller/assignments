@@ -102,6 +102,16 @@
     margin: auto;
 }
 
+#emailDiv {
+    position: relative;
+}
+
+.emailGlyph {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
 .content {
     text-align: center;
     padding-top: 20px;
@@ -210,13 +220,12 @@ relatedSectionTitle {
     width: 280px;
 }
 
-favoritesSection {
+.favoritesSection {
     margin-bottom: 20px;
 }
 
 .archivesDropdown {
     border: 1px solid lightgrey;
-    margin-top: 20px;
     text-align: left;
 }
 
@@ -260,6 +269,10 @@ favoritesSection {
 .instagramButton {
     color: white;
     background-color: rgb(81, 127, 184);
+}
+
+.bottomButton {
+    margin-top: 20px;
 }
 
 #footer {

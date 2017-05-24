@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="TodoApp">
+<html lang="en" ng-app="todoApp">
 
 <head>
     <meta charset="UTF-8">
@@ -70,7 +70,7 @@
                             <td ng-model="todo.completed" ng-class="{completed: todo.completed}">{{todo.price}}</td>
                             <td ng-model="todo.completed" ng-class="{completed: todo.completed}">{{todo.description}}
                             </td>
-                            <td><input type="checkbox" ng-model="todo.completed" {{todo.completed ? "checked" : ""}}>
+                            <td><input type="checkbox" ng-model="todo.completed" ng-change="onCompletedChange(todo)" {{todo.completed ? "checked" : ""}}>
                             </td>
                             <td><img ng-src=" {{todo.imgUrl}} ">
                             </td>

@@ -1,0 +1,1 @@
+A simple angular site that fetches the star wars opening credits and displays them on the page

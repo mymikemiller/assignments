@@ -1,24 +1,22 @@
-var app = angular.module("TodoApp", []);
+var app = angular.module("todoApp", []);
+
+var url = "https://api.vschool.io/mike/todo/";
 
 
 
-app.controller("TodoController", ["$scope", "httpService", function ($scope, httpService) {
-    angular.element(document).ready(function () {
-        $scope.getTodos();
-    });
-
+app.controller("TodoController", ["$scope", "TodoService", function ($scope, TodoService) {
     $scope.todos = [];
-    $scope.getTodos = function () {
-        httpService.getRequest('https://api.vschool.io/mike/todo').then(function (serviceResponse) {
+
+    // Define and execute at once (IIFE)
+    (function getTodos() {
+        TodoService.getTodos().then(function (serviceResponse) {
             $scope.todos = serviceResponse;
         });
-    }
+    })();
 
     $scope.clickSubmit = function (data) {
 
-        httpService.postRequest('https://api.vschool.io/mike/todo', data).then(function (serviceResponse) {
-
-
+        TodoService.postTodo(data).then(function (serviceResponse) {
             $scope.todos.push(serviceResponse);
         });
     }
@@ -26,20 +24,24 @@ app.controller("TodoController", ["$scope", "httpService", function ($scope, htt
     $scope.clickDelete = function (todo) {
         var id = todo._id;
 
-        httpService.deleteRequest('https://api.vschool.io/mike/todo/' + id).then(function (serviceResponse) {
-            $scope.getTodos();
-            //$scope.todos.push(serviceResponse);
-            //var index = $scope.todos.indexOf(serviceResponse);
-            //alert(index);
-            //$scope.todos.splice(index, 1);
+        TodoService.deleteTodo(id).then(function (serviceResponse) {
+            getTodos();
+        });
+    }
+
+    $scope.onCompletedChange = function (todo) {
+        var id = todo._id;
+
+        TodoService.updateTodo(id, todo).then(function (serviceResponse) {
+            getTodos();
         });
     }
 
 }]);
 
 
-app.service("httpService", function ($http) {
-    this.getRequest = function (url) {
+app.service("TodoService", function ($http) {
+    this.getTodos = function () {
         return $http.get(url).then(
             function (serverResponse) {
                 return serverResponse.data;
@@ -49,7 +51,7 @@ app.service("httpService", function ($http) {
             });
     };
 
-    this.postRequest = function (url, data) {
+    this.postTodo = function (data) {
         return $http.post(url, data).then(
             function (serverResponse) {
                 return serverResponse.data;
@@ -59,8 +61,20 @@ app.service("httpService", function ($http) {
             });
     }
 
-    this.deleteRequest = function (url) {
-        return $http.delete(url).then(
+    this.deleteTodo = function (id) {
+        finalUrl = url + id
+        return $http.delete(finalUrl).then(
+            function (serverResponse) {
+                return serverResponse.data;
+            },
+            function (serverResponse) {
+                return serverResponse.statusText;
+            });
+    }
+
+    this.updateTodo = function (id, data) {
+        var finalUrl = url + id;
+        return $http.put(finalUrl, data).then(
             function (serverResponse) {
                 return serverResponse.data;
             },
