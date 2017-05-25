@@ -1,16 +1,16 @@
 var app = angular.module("HitListApp", []);
 
-app.controller("HitListController", ["$scope", "httpService", function ($scope, httpService) {
+app.controller("HitListController", ["$scope", "HttpService", function ($scope, HttpService) {
 
     $scope.targets = [];
     $scope.getHitList = function () {
-        httpService.getRequest('http://api.vschool.io:6543/hitlist.json').then(function (serviceResponse) {
+        HttpService.getRequest('http://api.vschool.io:6543/hitlist.json').then(function (serviceResponse) {
             $scope.targets = serviceResponse;
         });
     }
 }]);
 
-app.service("httpService", function ($http) {
+app.service("HttpService", function ($http) {
     this.getRequest = function (url) {
         return $http.get(url).then(
             function (serverResponse) {

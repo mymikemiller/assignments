@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clickerApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mighty Clicker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel=stylesheet href="styles.css">
+</head>
+
+<body>
+    <div ng-controller="ColorController">
+        <div class="container">
+            <div class="row">
+                <div class="redCol colorCol col-xs-4 col-xs-offset-2">
+                    <div class="innerCol">
+                        <h1>{{redScore}}</h1>
+                        <button class="btn btn-danger" ng-click="clickRedButton()">Click Me!</button>
+                    </div>
+                </div>
+
+                <div class="blueCol colorCol col-xs-4" style="background-color: blue">
+                    <div class="innerCol">
+                        <h1>{{blueScore}}</h1>
+                        <button class="btn btn-primary" ng-click="clickBlueButton()">No, Click Me!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js">
+
+
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

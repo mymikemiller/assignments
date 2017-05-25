@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pokemonList">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Services Beginnings (Pokemon List)</title>
+</head>
+
+<body>
+    <div ng-controller="PokeAddRemoveController">
+        <input type="text" placeholder="pokemon name" ng-model="pokemonName">
+        <button ng-model="pokemonName" ng-click="clickAddPokemon(pokemonName)">Add Pokemon</button>
+        <button ng-model="pokemonName" ng-click="clickRemovePokemon(pokemonName)">Remove Pokemon</button>
+    </div>
+
+    <div ng-controller="PokeDisplayController">
+
+        <div ng-repeat="thisPokemon in pokemon">
+            {{thisPokemon}}
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.colorCol {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.blueCol {
+    background-color: blue;
+    color: white;
+}
+
+.redCol {
+    background-color: red;
+}
+
+.innerCol {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
