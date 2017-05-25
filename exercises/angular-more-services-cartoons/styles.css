@@ -1,0 +1,40 @@
+.cartoonImage {
+    width: 200px;
+}
+
+.inputCol,
+.displayCol {
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+.inputCol {
+    background-color: #5B9BFF;
+}
+
+.displayCol {
+    background-color: #FFD37A;
+    display: flex;
+    justify-content: center;
+}
+
+.cartoonInput {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.centeredButton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+body {
+    text-align: center;
+}
+
+img {
+    margin: auto;
+    display: block;
+}

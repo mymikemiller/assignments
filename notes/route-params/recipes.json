@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Spaghetti and Meatballs",
+        "prepTime": "30 minutes",
+        "ingredients": ["noodles", "marinara sauce", "meatballs"],
+        "imgUrl": "https://images-gmi-pmc.edge-generalmills.com/6d74668c-7d48-472b-8a65-8aad349e7989.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Tuna Casserole",
+        "prepTime": "20 minutes",
+        "ingredients": ["tuna", "casserole"],
+        "imgUrl": "https://www.cscassets.com/recipes/large_cknew/large_24254.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Lasagna",
+        "prepTime": "60 minutes",
+        "ingredients": ["Marie Callender's Three Meat and Four Cheese Lasagna"],
+        "imgUrl": "http://www.mariecallendersmeals.com/sites/g/files/qyyrlu306/files/images/products/meat-lasagna-53009.png"
+    },
+    {
+        "id": 4,
+        "name": "Chicken Pot Pie",
+        "prepTime": "30 minutes",
+        "ingredients": ["chicken", "pots", "pies"],
+        "imgUrl": "https://images-gmi-pmc.edge-generalmills.com/dc6d7f7a-1dc1-49c2-8d3e-16758204849a.jpg"
+    }       
+]

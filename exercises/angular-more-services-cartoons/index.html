@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cartoonApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cartoon Network</title>
+    <link rel=stylesheet href="styles.css">
+    <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="CartoonController">
+
+    <div class="container">
+        <div class="row">
+            <div class="inputCol col-xs-10 col-xs-offset-1">
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+                        <input class="cartoonInput form-control" type=text placeholder="Title" ng-model="cartoon.title">
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+                        <input class="cartoonInput form-control" type=text placeholder="Description" ng-model="cartoon.description">
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+                        <input class="cartoonInput form-control" type=text placeholder="Image URL" ng-model="cartoon.imgUrl">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="centeredButton">
+                            <button class="btn btn-submit" ng-click="clickAddCartoon(cartoon)">Add Cartoon</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="displayCol col-xs-10 col-xs-offset-1">
+                <div ng-repeat="cartoon in cartoons">
+                    <h1>{{cartoon.title}}</h1>
+                    <h2>{{cartoon.description}}</h2>
+                    <img class="cartoonImage" ng-src={{cartoon.imgUrl}}>
+                </div>
+            </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+                < script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" >
+            </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+            <script src="app.js"></script>
+            <script src="services.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
