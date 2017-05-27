@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="musicApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+</head>
+
+<body>
+
+    <a href="#">Home</a>
+    <a href="#">Blog</a>
+    <a href="#/artists">Artists</a>
+
+    <ng-view></ng-view>
+
+    <hr>
+    <div>Footer</div>
+
+
+    <!-- CDNs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+    <!-- Components -->
+    <script src="app.js"></script>
+    <script src="components/artists/artists.js"></script>
+    <script src="components/singleArtist/artist.js"></script>
+    <script src="components/services/database.js"></script>
+</body>
+
+</html>

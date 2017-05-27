@@ -1,0 +1,4 @@
+<div ng-repeat="stream in streams">
+    <h1>{{stream.channel.display_name}}</h1>
+    <a href="/#/videos/{{stream.channel.display_name}}"><img ng-src={{stream.preview.medium}}></a>
+</div>
