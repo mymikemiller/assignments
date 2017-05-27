@@ -2,6 +2,8 @@
 
 
 <div ng-repeat="video in videos">
-    <h2>{{video.title}}</h2>
+    <a ng-href=#/video/{{video._id}}>
+        <h2>{{video.title}}</h2>
+    </a>
     <img ng-src={{video.preview}}>
 </div>

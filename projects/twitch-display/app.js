@@ -12,7 +12,11 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         .when("/videos/:name", {
             templateUrl: "components/videos/videos.html",
-            controller: "StreamCtrl"
+            controller: "VideosCtrl"
+        })
+        .when("/video/:videoId", {
+            templateUrl: "components/video/video.html",
+            controller: "VideoCtrl"
         })
         .otherwise({
             redirectTo: "/home"

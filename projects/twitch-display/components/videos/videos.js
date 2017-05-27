@@ -1,9 +1,9 @@
 var app = angular.module("twitchApp");
 
-app.controller("StreamCtrl", ["$scope", "$routeParams", "StreamService", function ($scope, $routeParams, StreamService) {
+app.controller("VideosCtrl", ["$scope", "$routeParams", "VideosService", function ($scope, $routeParams, VideosService) {
 
     console.log($routeParams);
-    StreamService.getVideos($routeParams.name).then(function (response) {
+    VideosService.getVideos($routeParams.name).then(function (response) {
 
         $scope.videos = response.data.videos;
 
@@ -12,7 +12,7 @@ app.controller("StreamCtrl", ["$scope", "$routeParams", "StreamService", functio
     })
 }]);
 
-app.service("StreamService", ["$http", function ($http) {
+app.service("VideosService", ["$http", function ($http) {
     this.getVideos = function (name) {
         return $http.get("https://api.twitch.tv/kraken/channels/" + name + "/videos", {
             headers: {
