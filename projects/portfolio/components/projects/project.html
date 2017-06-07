@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xs-8 projectColumn">
+        <div class="projectTitle">{{project.title}}</div>
+        <div class="shortDescription">{{project.shortDescription}}</div>
+        <div class="download" ng-if="project.hasOwnProperty('download')">
+            <a href='{{project.download}}'>Download</a></div>
+        <div class="github"><a href='{{project.github}}'>GitHub</a></div>
+        <div class="projectDescription">{{project.description}}</div>
+    </div>
+    <div class="col-xs-4 projectColumn">
+        <img class="projectImage" ng-src={{project.images[0]}}>
+    </div>
+</div>

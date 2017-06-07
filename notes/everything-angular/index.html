@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ReviewApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <navbar></navbar>
+
+    <ng-view></ng-view>
+
+    <!--  Libs  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+    <!--  Main App  -->
+    <script src="app.js"></script>
+
+    <!--  Components  -->
+    <script src="components/contacts/contacts.js"></script>
+
+    <!--  Services  -->
+    <script src="services/contactService.js"></script>
+
+    <!--  Filters  -->
+    <script src="filters/contactFilter.js"></script>
+
+    <!--  Directives  -->
+    <script src="components/directives/navbar/navbar.js"></script>
+    <script src="components/directives/contact-card/contactCard.js"></script>
+</body>
+
+</html>

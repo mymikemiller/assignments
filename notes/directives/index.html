@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Directives</title>
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <input type="text" ng-model="name" on-enter="greet()">{{greeting}}
+
+
+    <!-- elements -->
+    <!--my-info></my-info-->
+
+    <div my-info='allen'></div>
+
+    <!-- Classes -->
+    <!--div class="my-info"></div-->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

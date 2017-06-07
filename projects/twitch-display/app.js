@@ -6,9 +6,9 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "components/home/home.html",
             controller: "HomeCtrl"
         })
-        .when("/streams/:searchTerm", {
-            templateUrl: "components/streams/streams.html",
-            controller: "StreamsCtrl"
+        .when("/channels/:searchTerm", {
+            templateUrl: "components/channels/channels.html",
+            controller: "ChannelsCtrl"
         })
         .when("/videos/:name", {
             templateUrl: "components/videos/videos.html",
@@ -21,4 +21,10 @@ app.config(["$routeProvider", function ($routeProvider) {
         .otherwise({
             redirectTo: "/home"
         });
+}]);
+
+app.controller("AppCtrl", ["$scope", "$location", "$window", function ($scope, $location, $window) {
+    $scope.clickSearch = function (searchTerm) {
+        $window.location.href = "#/channels/" + $scope.gameInput
+    }
 }]);

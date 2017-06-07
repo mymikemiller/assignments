@@ -1,5 +1,5 @@
-<h1>video!</h1>
-<h1>{{videoId}}</h1>
-<h1>{{ videoId | twitchVideoUrl }}"</h1>
-<iframe ng-src="{{ videoId | twitchVideoUrl }}" height="480" width="640" frameborder="0" scrolling="no" allowfullscreen="true">
+<h1>{{ video.title }}</h1>
+<h2>{{ video.game }}</h2>
+<h3>{{ video.description }}</h3>
+<iframe ng-src="{{ videoId | twitchVideoUrl }}" height="{{videoHeight}}" width="{{videoWidth}}" frameborder="0" scrolling="no" allowfullscreen="true">
 </iframe>

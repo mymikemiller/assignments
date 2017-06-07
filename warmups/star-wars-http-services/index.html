@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="starWarsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars Http Request</title>
+</head>
+
+<body ng-controller="StarWarsController">
+
+    <button ng-click="buttonClick()">Click Me!</button>
+    <div ng-repeat="person in people">
+        {{person.name}}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,9 +1,19 @@
-<h1>This is the single stream page</h1>
-
-
 <div ng-repeat="video in videos">
-    <a ng-href=#/video/{{video._id}}>
-        <h2>{{video.title}}</h2>
-    </a>
-    <img ng-src={{video.preview}}>
+    <div class="videoDisplay">
+        <div class="imgs">
+            <a class="videoImage" href="/#/video/{{video._id}}">
+                <img ng-src={{video.preview}}>
+                <div class="description">{{video.title}}</div>
+            </a>
+        </div>
+    </div>
 </div>
+
+
+<!--div ng-repeat="video in videos">
+    <h2>{{video.title}}</h2>
+    <h3>{{ video.game }}</h3>
+    <a ng-href=#/video/{{video._id}}>
+        <img ng-src={{video.preview}}>
+    </a>
+    </div-->
