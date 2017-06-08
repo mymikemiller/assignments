@@ -20,5 +20,5 @@ app.listen(port, function () {
     console.log("server is running on port " + port);
 });
 
-app.use("/characters", require("./routes/characters.js"));
-app.use("/shows", require("./routes/shows.js"));
+app.use("/characters", require("./routes/characterRoutes.js"));
+app.use("/shows", require("./routes/showRoutes.js"));
