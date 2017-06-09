@@ -30,6 +30,13 @@ app.controller("ProjectsCtrl", ["$scope", function ($scope) {
             description: "SuperDoku is a graphical Sudoku game for Windows Mobile (Pocket PC), SmartPhone and PC written in C# for the .NET Compact Framework. Instead of using just numbers, SuperDoku enables you to use images. The user can easily create their own skin, or download from a collection of user-uploaded skins."
         }
     ];
+
+    $scope.skillsBar = [
+        {
+            skill: "Java",
+            percent: 75
+        }
+    ]
 }]);
 
 app.directive("project", function () {

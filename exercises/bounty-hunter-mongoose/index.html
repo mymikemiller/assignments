@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bountyHunterApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bounty Hunter</title>
+</head>
+
+<body ng-controller="BountyHunterController">
+
+<div ng-repeat="bounty in bounties track by $index">
+    <h1>{{bounty.firstName}} {{bounty.lastName}}</h1>
+    <h2>Bounty: {{bounty.bounty}}</h2>
+    <h3>Alive: {{bounty.living}}</h3>
+    <h3>Type: {{bounty.type}}</h3>
+    <h4>Id: {{bounty._id}}</h4>
+    <button ng-click="deleteBounty(bounty)">Delete</button>
+</div>
+
+<form>
+    <input type=text placeholder="First Name" ng-model="bounty.firstName">
+    <input type=text placeholder="Last Name" ng-model="bounty.lastName">
+    <input type=text placeholder="Bounty" ng-model="bounty.bounty">
+    <label>Alive:
+        <input type="checkbox" ng-model="bounty.living">
+    </label>
+    <select name="singleSelect" ng-model="bounty.type">
+        <option value="Jedi">Jedi</option>
+        <option value="Sith">Sith</option>
+    </select>
+    <input type=text placeholder="Id (only if updating)" ng-model="bounty._id">
+
+    <button ng-model="bounty" ng-click="addOrUpdateBounty(bounty)">Add/Update Bounty</button>
+</form>
+
+<script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js "></script>
+<script src="app.js "></script>
+</body>
+
+</html>

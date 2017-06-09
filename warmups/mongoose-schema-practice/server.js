@@ -13,7 +13,7 @@ mongoose.connect("mongodb://localhost/reddit")
 
 app.listen(port, function () {
     console.log("server is listening on port " + port);
-})
+});
 
 app.use("/users", require("./routes/userRoutes"));
 app.use("/posts", require("./routes/postRoutes"));
