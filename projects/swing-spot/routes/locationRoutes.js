@@ -12,6 +12,8 @@ locationRoutes.route("/")
         });
     })
     .post(function (req, res) {
+        console.log("put locations");
+        console.log(req.body);
         var location = new Location(req.body);
         location.save(function (err, newLocation) {
             if (err) return res.status(500).send(err);
@@ -36,7 +38,7 @@ locationRoutes.route("/:id")
     .delete(function (req, res) {
         Location.findByIdAndRemove(req.params.id, function (err, removedLocation) {
             if (err) return res.status(500).send(err);
-            return res.send(removedLocations);
+            return res.send(removedLocation);
         })
     });
 
