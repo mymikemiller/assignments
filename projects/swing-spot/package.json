@@ -1,7 +1,6 @@
 {
   "name": "swing-spot",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "geolocation-marker": "^2.0.4"
-  }
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "geolocation-marker": "^2.0.4",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {},
+  "description": ""
 }

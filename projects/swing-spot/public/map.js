@@ -1,7 +1,8 @@
 var markerManager;
 
-function initMap() {
+initMap();
 
+function initMap() {
 
     var locs = [{lat: 40.762, lng: -111.90},
         {lat: 40.766086, lng: -111.894},
@@ -11,6 +12,8 @@ function initMap() {
         zoom: 14,
         center: locs[0]
     });
+
+    var GeoMarker = new GeolocationMarker(map);
 
     markerManager = new MarkerManager(map);
 
@@ -29,9 +32,6 @@ function initMap() {
                 lng: position.coords.longitude
             };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Your Location');
-            infoWindow.open(map);
             map.setCenter(pos);
 
             var closestMarker = markerManager.getClosestMarkerTo(pos);
