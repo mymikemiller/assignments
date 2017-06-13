@@ -1,14 +1,35 @@
 function MarkerManager(map) {
     this.markers = [];
     this.map = map;
+    var self = this;
 
-    this.addMarker = function (loc) {
+    this.addMarker = function (loc, scope) {
+        console.log("Adding marker at " + JSON.stringify(loc));
         var marker = new google.maps.Marker({
             position: loc,
             map: this.map
         });
+
+        marker.addListener('click', function () {
+            console.log("clicked marker " + marker);
+            if (scope.deleteSpotMode) {
+                console.log("removing marker " + marker);
+                self.removeMarker(marker);
+                //scope.deleteSpot()
+            }
+        });
+
         this.markers.push(marker);
     };
+
+    this.removeMarker = function (marker) {
+        this.markers.forEach(function (currentMarker, index, array) {
+            if (currentMarker === marker) {
+                array.splice(index, 1);
+                currentMarker.setMap(null);
+            }
+        });
+    }
 
 
     this.getClosestMarkerTo = function (loc) {

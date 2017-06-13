@@ -1,61 +1,116 @@
-var app = angular.module("swingSpotApp", []);
-var scope;
+var app = angular.module("swingSpotApp", ['ngMap']);
+//var scope;
 
-app.controller("MainController", ["$scope", "LocationService", function ($scope, LocationService) {
-    scope = $scope;
-    $scope.placeLocationMode = false;
-    $scope.clickPlaceButton = function () {
-        $scope.placeLocationMode = !$scope.placeLocationMode;
-    }
+app.controller("MainController", ["$scope", "SpotService", 'NgMap', function ($scope, SpotService, NgMap) {
+    //scope = $scope;
+    $scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2NirNh6q_wPXkoT91QDSvRJ0PbogzLE";
 
-    $scope.getLocations = function () {
-        LocationService.getLocations().then(function (response) {
-            $scope.locations = response.data;
+    $scope.addSpotMode = false;
+    $scope.clickAddSpotModeButton = function () {
+        $scope.addSpotMode = !$scope.addSpotMode;
+        $scope.deleteSpotMode = false;
+    };
+    $scope.deleteSpotMode = false;
+    $scope.clickDeleteSpotModeButton = function () {
+        $scope.deleteSpotMode = !$scope.deleteSpotMode;
+        $scope.addSpotMode = false;
+        console.log("delete mode");
+    };
+
+    this.foo = function (event, arg1, arg2) {
+        alert('this is at ' + this.getPosition());
+        alert(arg1 + arg2);
+    };
+
+    NgMap.getMap().then(function (map) {
+        initMap(map);
+        console.log(map.getCenter());
+        console.log('markers', map.markers);
+        console.log('shapes', map.shapes);
+
+        google.maps.event.addListener(map, "click", function (e) {
+
+            //var scope = angular.element(document.getElementById('body')).scope();
+
+            if ($scope.addSpotMode) {
+                var loc = {
+                    lat: parseFloat(e.latLng.lat().toFixed(6)),
+                    lng: parseFloat(e.latLng.lng().toFixed(6))
+                };
+
+                var spot = {
+                    lat: loc.lat,
+                    lng: loc.lng,
+                    name: ""
+                };
+                markerManager.addMarker(loc, $scope);
+
+                $scope.addOrUpdateSpot(spot);
+            }
+        });
+
+        // Populate the page after loading the map
+        console.log("calling getSpots");
+        $scope.getSpots();
+    });
+
+
+    $scope.getSpots = function () {
+        SpotService.getSpots().then(function (response) {
+            console.log(response);
+            response.data.forEach(function (spot) {
+                var coord = {
+                    lat: spot.lat,
+                    lng: spot.lng
+                }
+                console.log(JSON.stringify("getSpots got spot at " + coord));
+
+                markerManager.addMarker(coord, $scope);
+            });
         });
     }
 
-    $scope.deleteLocation = function (location) {
-        console.log(location);
-        LocationService.deleteLocation(location._id).then(function (response) {
-            for (var i = 0; i < $scope.locations.length; i++) {
-                if ($scope.locations[i]._id == response.data._id) {
-                    $scope.locations.splice(i, 1);
+    $scope.deleteSpot = function (spot) {
+        console.log("deleting spot");
+        SpotService.deleteSpot(spot._id).then(function (response) {
+            for (var i = 0; i < $scope.spots.length; i++) {
+                if ($scope.spots[i]._id == response.data._id) {
+                    $scope.spots.splice(i, 1);
                     break;
                 }
             }
         });
-    }
+    };
 
-    $scope.addOrUpdateLocation = function (location) {
-        if (location.hasOwnProperty('_id') && location._id.length > 0) {
-            console.log("update location: " + JSON.stringify(location));
-            // Update the location
-            LocationService.updateLocation(location).then(function (response) {
+    $scope.addOrUpdateSpot = function (spot) {
+        if (spot.hasOwnProperty('_id') && spot._id.length > 0) {
+            console.log("update spot: " + JSON.stringify(spot));
+            // Update the spot
+            SpotService.updateSpot(spot).then(function (response) {
                 console.log("update response: " + JSON.stringify(response.data));
-                for (var i = 0; i < $scope.locations.length; i++) {
-                    if ($scope.locations[i]._id == response.data._id) {
-                        $scope.locations.splice(i, 1, response.data);
+                for (var i = 0; i < $scope.spots.length; i++) {
+                    if ($scope.spots[i]._id == response.data._id) {
+                        $scope.spots.splice(i, 1, response.data);
                         break;
                     }
                 }
             });
         } else {
-            // Add the location
-            LocationService.addLocation(location).then(function (response) {
-                $scope.locations.push(response.data);
+            console.log("add spot");
+            // Add the spot
+            SpotService.addSpot(spot).then(function (response) {
+                console.log("spot added!");
             });
         }
     }
 
-    // Populate the page on load
-    $scope.getLocations();
 }]);
 
 
-app.service("LocationService", ["$http", function ($http) {
-    this.getLocations = function () {
-        return $http.get("/locations").then(function (response) {
-            console.log("success")
+app.service("SpotService", ["$http", function ($http) {
+    this.getSpots = function () {
+        return $http.get("/spots").then(function (response) {
+            console.log("success");
             console.log(response);
             return response;
         }, function (response) {
@@ -63,11 +118,11 @@ app.service("LocationService", ["$http", function ($http) {
             console.log(response);
             return response;
         })
-    }
-    this.deleteLocation = function (id) {
-        console.log("delete " + /locations/ + id);
-        return $http.delete("/locations/" + id).then(function (response) {
-            console.log("success")
+    };
+    this.deleteSpot = function (id) {
+        console.log("delete " + /spots/ + id);
+        return $http.delete("/spots/" + id).then(function (response) {
+            console.log("success");
             console.log(response);
             return response;
         }, function (response) {
@@ -75,10 +130,23 @@ app.service("LocationService", ["$http", function ($http) {
             console.log(response);
             return response;
         })
-    }
-    this.addLocation = function (location) {
-        console.log("adding " + JSON.stringify(location))
-        return $http.post('/locations/', location).then(function (response) {
+    };
+    this.addSpot = function (spot) {
+        console.log("adding " + JSON.stringify(spot));
+        return $http.post('/spots/', spot).then(function (response) {
+                console.log("success");
+                console.log(response);
+                return response;
+            },
+            function (response) {
+                console.log("failure");
+                console.log(response);
+                return response;
+            })
+    };
+    this.updateSpot = function (spot) {
+        console.log("updating now " + JSON.stringify(spot));
+        return $http.put('/spots/' + spot._id, spot).then(function (response) {
                 console.log("success");
                 console.log(response);
                 return response;
@@ -89,17 +157,4 @@ app.service("LocationService", ["$http", function ($http) {
                 return response;
             })
     }
-    this.updateLocation = function (location) {
-        console.log("updating now " + JSON.stringify(location))
-        return $http.put('/locations/' + location._id, location).then(function (response) {
-                console.log("success");
-                console.log(response);
-                return response;
-            },
-            function (response) {
-                console.log("failure");
-                console.log(response);
-                return response;
-            })
-    }
-}])
+}]);

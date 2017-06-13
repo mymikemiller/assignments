@@ -20,7 +20,7 @@ mongoose.connect("mongodb://localhost/locations", function (err) {
 
 app.use(bodyParser.json());
 
-app.use("/locations", require("./routes/locationRoutes.js"));
+app.use("/spots", require("./routes/spotRoutes.js"));
 app.use(express.static(path.join(__dirname, "public")));
 
 
