@@ -1,0 +1,21 @@
+{
+  "name": "react_simple",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-font-awesome": "^1.0.3",
+    "react-fontawesome": "^1.6.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
