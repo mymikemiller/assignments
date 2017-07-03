@@ -1,0 +1,21 @@
+@font-face {
+  font-family: DomCasual;
+  src: url('DomCasual.TTF') format('truetype');
+  font-weight: bold;
+}
+
+.character {
+  background-color: rgb(204, 56, 0);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 350px;
+  float:left;
+}
+
+h1 {
+  font-family: DomCasual;
+  color:white;
+}

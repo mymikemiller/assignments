@@ -1,0 +1,32 @@
+nav {
+  background-color: rgb(44, 62, 80) !important;
+  padding: 20px;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-size: 1.8em;
+  font-weight: 500;
+  padding-left: 90px;
+}
+
+a {
+  color: white !important;
+}
+
+li a {
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+a:hover {
+  color: rgb(24, 188, 156) !important;
+}
+
+.navbar-right {
+  margin-right: 90px;
+}
+
+.navbar {
+  border: 0;
+}

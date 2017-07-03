@@ -1,0 +1,51 @@
+.navbar {
+    background-color: transparent;
+    border: none;
+}
+.navbar a {
+    color: white !important;
+}
+.sep {
+    margin: 5px 0px;
+    height: 5px;
+    background-color: white;
+    width: 100px;
+    margin: auto;
+}
+.header {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: -100px;
+    padding: 150px 0px;
+    height: 450px;
+    text-align: center;
+    background-image: url("https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+.header h1 {
+    font-size: 80px;
+    font-weight: 900;
+    padding-bottom: 20px;
+}
+footer {
+    text-align: center;
+    font-size: 30px;
+    border-top: solid 2px grey;
+    margin-top: 50px;
+}
+.fa-twitter {
+    font-size: 20px;
+}
+.footer-inner {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.copyright {
+    font-size: 14px;
+}
+.article {
+    padding: 50px 0px;
+    border-bottom: solid 2px grey;
+}

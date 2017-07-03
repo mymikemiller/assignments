@@ -9,19 +9,21 @@ import Content from "./content.js";
 
 class App extends React.Component {
   render() {
-    return(
+    return (
       <div className="content">
+        <div></div>
         <Navbar brand="CatBabies" links={
           [
             {
               text: "Main Coons",
-              link: "http://google.com"},
+              link: "http://google.com"
+            },
             {
               text: "Blog",
               link: "http://yahoo.com"
             }
           ]
-        }/>
+        } />
         <Content>
           <h1 className="title">Hello hello, I don't know why you say goodbye</h1>
           <p>I don't know everything</p>

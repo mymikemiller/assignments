@@ -1,0 +1,20 @@
+img {
+    margin: auto;
+    display: block;
+}
+
+.header {
+  padding: 100px;
+}
+
+.header-text {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+.header-title {
+  font-size: 75px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
