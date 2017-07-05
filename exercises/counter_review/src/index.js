@@ -1,8 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react"
+import ReactDOM from "react-dom"
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import CounterContainer from "./containers/counter-container.js"
+
+class App extends React.Component {
+  render() {
+    return (
+      <CounterContainer />
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector("#root"));
