@@ -1,6 +1,6 @@
 @font-face {
-  font-family: DomCasual;
-  src: url('DomCasual.TTF') format('truetype');
+  font-family: "DomCasual";
+  src: local('DomCasual'), url(/DomCasual.woff) format('woff');
   font-weight: bold;
 }
 
@@ -16,6 +16,6 @@
 }
 
 h1 {
-  font-family: DomCasual;
+  font-family: "DomCasual";
   color:white;
 }

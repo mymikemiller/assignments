@@ -14,4 +14,5 @@ class Character extends React.Component {
   }
 }
 
+
 export default Character;

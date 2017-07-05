@@ -4,14 +4,14 @@ import "./index.css";
 
 //import components
 import CustomNavbar from "./navbar.js";
-import CharacterList from "./character_list.js";
+import CharacterContainer from "./containers/character-container.js";
 
 class App extends React.Component {
   render() {
     return (
       <div className="content">
         <CustomNavbar image="animaniacs-logo.jpg"/>
-        <CharacterList characters={
+        <CharacterContainer characters={
           [
             {
               name: "Pinky",

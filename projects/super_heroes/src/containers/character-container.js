@@ -1,8 +1,8 @@
 import React from "react";
-import "./character_list.css";
-import Character from "./character.js";
+import "./character-container.css";
+import Character from "../components/character.js";
 
-class CharacterList extends React.Component {
+class CharacterContainer extends React.Component {
   alertCatchphrase(catchphrase) {
       alert(catchphrase)
   }
@@ -22,4 +22,4 @@ class CharacterList extends React.Component {
   }
 }
 
-export default CharacterList;
+export default CharacterContainer;
