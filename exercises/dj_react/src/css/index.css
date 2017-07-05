@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  height: 110vh;
+}
+
+.shape {
+  height: 200px;
+  width: 200px;
+  margin:auto;
+  margin-top: 100px;
+  margin-left: 100px;
+  display: inline-block;
+  transition: all 2s ease;
+}
