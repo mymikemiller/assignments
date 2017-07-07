@@ -3,6 +3,8 @@ import React from "react";
 import DJ from "../components/dj.js";
 import autoBind from "react-autobind";
 
+import ReactAudioPlayer from "react-audio-player";
+
 class DJContainer extends React.Component {
   constructor() {
     super();
@@ -39,7 +41,10 @@ class DJContainer extends React.Component {
 
   render() {
     return (
-      <DJ style={this.state.style} handleClick={this.switchToCircle} handleScroll={this.switchToDiamond} />
+      <div>
+        <ReactAudioPlayer src="/music/birdhouse.mp3" autoPlay />
+        <DJ style={this.state.style} handleClick={this.switchToCircle} handleScroll={this.switchToDiamond} />
+      </div>
     )
   }
 }

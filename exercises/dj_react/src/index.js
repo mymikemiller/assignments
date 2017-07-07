@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-
 import "./css/index.css";
 
 import DJContainer from "./containers/dj-container.js";

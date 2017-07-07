@@ -1,0 +1,30 @@
+.containerContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.todoContainer {
+  width: 400px;
+  margin: auto;
+  
+}
+
+.todoListItem {
+  margin-top: 10px;
+}
+
+.todoListItem button {
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.inputAndButton {
+  display: flex;
+}
+
+.inputAndButton Button {
+  margin-left: 10px;
+}
