@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploads</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="MainController">
+<form>
+    <label for="first-name">First Name: </label>
+    <input type="text" id="first-name" ng-model="user.firstName">
+    <br>
+
+    <label for="last-name">Last Name: </label>
+    <input type="text" id="last-name" ng-model="user.lastName">
+    <br>
+
+    <label for="avatar">Photo: </label>
+    <input type="file"
+           ngf-select
+           ng-model="file"
+           name="file"
+           id="avatar">
+    <br>
+    <br>
+
+    <button type="submit" ng-click="submit(file, user)" class="btn btn-primary">submit</button>
+</form>
+<img ngf-thumbnail="file" class="thumbnail" style="max-width: 500px; height: auto">
+
+<hr>
+<h2>Users:</h2>
+<div ng-repeat="user in users">
+    <h3>{{user.firstName}} {{user.lastName}}</h3>
+    <img ng-src="{{user.image}}" alt="{{user.firstName}} {{user.lastName}}">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+<script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
