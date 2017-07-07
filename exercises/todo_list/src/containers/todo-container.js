@@ -2,9 +2,9 @@ import React from "react";
 import autoBind from "react-autobind";
 import { Form, FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
 
+import TodoList from "../components/todo-list.js";
 
 import "./todo-container.css";
-import Todo from "../components/todo.js";
 
 class TodoContainer extends React.Component {
   componentWillMount() {
@@ -49,20 +49,6 @@ class TodoContainer extends React.Component {
       titleValue: event.target.value
     });
   }
-  items() {
-    return this.state.todos.map((item, index) => {
-      return (
-        <li key={item + index} className="todoListItem">
-          <Todo
-            index={index}
-            title={item.title}
-            handleInput={this.input}
-            handleRemove={this.remove}
-            handleEdit={this.edit} />
-        </li>
-      )
-    });
-  }
   render() {
     return (
       <div className="containerContainer">
@@ -78,9 +64,10 @@ class TodoContainer extends React.Component {
                 </div>
               </FormGroup>
             </Form>
-            <ul>
-              {this.items()}
-            </ul>
+            <TodoList todos={this.state.todos}
+              handleInput={this.input}
+              handleRemove={this.remove}
+              handleEdit={this.edit} />
           </div>
         </div>
       </div>
