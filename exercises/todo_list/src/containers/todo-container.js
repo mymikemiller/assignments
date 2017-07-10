@@ -28,7 +28,7 @@ class TodoContainer extends React.Component {
     this.setState({
       ...this.state,
       todos: [...this.state.todos, newTodo],
-      titleValue: ""
+      titleValue: "" // How does this magically clear the text box???
     });
   }
   remove(index) {
@@ -39,11 +39,15 @@ class TodoContainer extends React.Component {
       todos: oldTodos
     });
   }
-  edit(index) {
-    console.log(`edit ${index}`)
-    //do nothing for now
+  editTitle(index, newTitle) {
+    let existingTodos = [...this.state.todos];
+    existingTodos[index].title = newTitle;
+    this.setState({
+      ...this.state,
+      todos: existingTodos
+    });
   }
-  input(event) {
+  inputTitle(event) {
     this.setState({
       ...this.state,
       titleValue: event.target.value
@@ -59,7 +63,7 @@ class TodoContainer extends React.Component {
               <FormGroup>
                 <ControlLabel>Input a todo item:</ControlLabel>
                 <div className="inputAndButton">
-                  <FormControl type="text" className="form-control" placeholder="Todo Title" value={this.props.titleValue} onChange={this.input} />
+                  <FormControl type="text" className="form-control" placeholder="Todo Title" value={this.props.titleValue} onChange={this.inputTitle} />
                   <Button type="submit" bsStyle="primary">Add Todo</Button>
                 </div>
               </FormGroup>
@@ -67,7 +71,7 @@ class TodoContainer extends React.Component {
             <TodoList todos={this.state.todos}
               handleInput={this.input}
               handleRemove={this.remove}
-              handleEdit={this.edit} />
+              handleEditTitle={this.editTitle} />
           </div>
         </div>
       </div>

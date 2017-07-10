@@ -12,7 +12,7 @@ class TodoList extends React.Component {
             title={item.title}
             handleInput={this.props.handleInput}
             handleRemove={this.props.handleRemove}
-            handleEdit={this.props.handleEdit} />
+            handleEditTitle={this.props.handleEditTitle} />
         </li>
       )
     });
