@@ -43,8 +43,27 @@ class TodoContainer extends React.Component {
   }
   setEditText(index, newTitle) {
     let existingTodos = [...this.state.todos];
-    existingTodos[index].title = newTitle;
+    existingTodos[index].editTitle = newTitle;
+    this.setState({
+      ...this.state,
+      todos: existingTodos,
+    });
+    console.log("setEditText editTitle", existingTodos[index].editTitle);
+  }
+  setTitle(index) {
+    let existingTodos = [...this.state.todos];
+    existingTodos[index].title = existingTodos[index].editTitle;
     existingTodos[index].editTitle = "";
+    this.setState({
+      ...this.state,
+      todos: existingTodos,
+    });
+  }
+
+  inputEditText(index, newTitle) {
+    console.log("in inputEditText", newTitle);
+    let existingTodos = [...this.state.todos];
+    existingTodos[index].editTitle = newTitle;
     this.setState({
       ...this.state,
       todos: existingTodos,
@@ -60,27 +79,25 @@ class TodoContainer extends React.Component {
     return (
       <div className="containerContainer">
         <div className="todoContainer">
-          <div>
-            <h1>Todo List</h1>
-            <Form onSubmit={(e) => { this.addTodo(); e.preventDefault(); }}>
-              <FormGroup>
-                <ControlLabel>Input a todo item:</ControlLabel>
-                <div className="inputAndButton">
-                  <FormControl type="text"
-                    className="form-control"
-                    placeholder="Todo Title"
-                    value={this.props.titleValue}
-                    onChange={this.inputTitle} />
-                  <Button type="submit" bsStyle="primary">Add Todo</Button>
-                </div>
-              </FormGroup>
-            </Form>
-            <TodoList todos={this.state.todos}
-              handleInput={this.input}
-              handleRemove={this.remove}
-              handleEditTitle={this.setText}
-              handleSetEditText={this.setEditText} />
-          </div>
+          <h1>Todo List</h1>
+          <Form onSubmit={(e) => { this.addTodo(); e.preventDefault(); }}>
+            <FormGroup>
+              <ControlLabel>Input a todo item:</ControlLabel>
+              <div className="inputAndButton">
+                <FormControl type="text"
+                  className="form-control"
+                  placeholder="Todo Title"
+                  value={this.state.titleValue}
+                  onChange={this.inputTitle} />
+                <Button type="submit" bsStyle="primary">Add Todo</Button>
+              </div>
+            </FormGroup>
+          </Form>
+          <TodoList todos={this.state.todos}
+            handleInputTitle={this.input}
+            handleRemove={this.remove}
+            handleSubmitEditTitle={this.setTitle}
+            handleInputEditText={this.inputEditText} />
         </div>
       </div>
     )

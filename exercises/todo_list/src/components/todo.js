@@ -8,8 +8,8 @@ class Todo extends React.Component {
   }
 
   inputTitleForEdit(event) {
-    console.log(this.props);
-    this.props.handleSetEditText(this.props.index, event.target.value);
+    console.log("inputTitleForEdit:", event.target.value);
+    this.props.handleInputEditText(this.props.index, event.target.value);
   }
 
   render() {
@@ -30,7 +30,7 @@ class Todo extends React.Component {
           {this.props.title}
 
           <Form onSubmit={(e) => {
-            this.props.handleEditTitle(
+            this.props.handleSubmitEditTitle(
               this.props.index,
               this.edittedTitle);
             e.preventDefault();
@@ -39,8 +39,9 @@ class Todo extends React.Component {
               <div className="inputAndButton">
                 <FormControl type="text"
                   placeholder="Todo Title"
-                  onChange={this.inputTitleForEdit} />
-                <Button type="submit" bsStyle="primary">Submit</Button>
+                  onChange={(e) => { this.inputTitleForEdit(e) }}
+                  value={this.props.editTitle} />
+                <Button type="submit" bsStyle="primary" >Submit</Button>
               </div>
             </FormGroup>
           </Form>

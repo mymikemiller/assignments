@@ -7,21 +7,23 @@ class TodoList extends React.Component {
   componentWillMount() {
     autoBind(this);
   }
-  setText() {
-    console.log(this.props.handleSetEditText);
+  inputEditText(index, newTitle) {
+    console.log("inputEditText newTitle", newTitle);
+    this.props.handleInputEditText(index, newTitle);
   }
   items() {
     return this.props.todos.map((item, index) => {
+      console.log("handleInputEditText:", this.props.handleInputEditText)
       return (
         <li key={item + index} className="todoListItem">
           <Todo
             index={index}
             title={item.title}
             editTitle={item.editTitle}
-            handleInput={this.props.handleInput}
+            handleInputTitle={this.props.handleInputTitle}
             handleRemove={this.props.handleRemove}
-            handleEditTitle={this.props.handleEditTitle}
-            handleSetEditText={this.setText} />
+            handleSubmitEditTitle={this.props.handleSubmitEditTitle}
+            handleInputEditText={this.inputEditText} />
         </li>
       )
     });
