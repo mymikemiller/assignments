@@ -15,7 +15,8 @@ class TodoContainer extends React.Component {
     this.state = {
       todos: [{
         title: "Do all the things",
-        completed: false
+        completed: false,
+        editTitle: ""
       }],
       titleValue: ""
     }
@@ -28,7 +29,8 @@ class TodoContainer extends React.Component {
     this.setState({
       ...this.state,
       todos: [...this.state.todos, newTodo],
-      titleValue: "" // How does this magically clear the text box???
+      titleValue: "",
+      editTitle: ""
     });
   }
   remove(index) {
@@ -39,12 +41,13 @@ class TodoContainer extends React.Component {
       todos: oldTodos
     });
   }
-  editTitle(index, newTitle) {
+  setEditText(index, newTitle) {
     let existingTodos = [...this.state.todos];
     existingTodos[index].title = newTitle;
+    existingTodos[index].editTitle = "";
     this.setState({
       ...this.state,
-      todos: existingTodos
+      todos: existingTodos,
     });
   }
   inputTitle(event) {
@@ -63,7 +66,11 @@ class TodoContainer extends React.Component {
               <FormGroup>
                 <ControlLabel>Input a todo item:</ControlLabel>
                 <div className="inputAndButton">
-                  <FormControl type="text" className="form-control" placeholder="Todo Title" value={this.props.titleValue} onChange={this.inputTitle} />
+                  <FormControl type="text"
+                    className="form-control"
+                    placeholder="Todo Title"
+                    value={this.props.titleValue}
+                    onChange={this.inputTitle} />
                   <Button type="submit" bsStyle="primary">Add Todo</Button>
                 </div>
               </FormGroup>
@@ -71,7 +78,8 @@ class TodoContainer extends React.Component {
             <TodoList todos={this.state.todos}
               handleInput={this.input}
               handleRemove={this.remove}
-              handleEditTitle={this.editTitle} />
+              handleEditTitle={this.setText}
+              handleSetEditText={this.setEditText} />
           </div>
         </div>
       </div>

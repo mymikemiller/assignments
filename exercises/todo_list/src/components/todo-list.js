@@ -1,8 +1,15 @@
 import React from "react";
+import autoBind from "react-autobind";
 
 import Todo from "../components/todo.js";
 
 class TodoList extends React.Component {
+  componentWillMount() {
+    autoBind(this);
+  }
+  setText() {
+    console.log(this.props.handleSetEditText);
+  }
   items() {
     return this.props.todos.map((item, index) => {
       return (
@@ -10,9 +17,11 @@ class TodoList extends React.Component {
           <Todo
             index={index}
             title={item.title}
+            editTitle={item.editTitle}
             handleInput={this.props.handleInput}
             handleRemove={this.props.handleRemove}
-            handleEditTitle={this.props.handleEditTitle} />
+            handleEditTitle={this.props.handleEditTitle}
+            handleSetEditText={this.setText} />
         </li>
       )
     });
