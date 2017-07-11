@@ -2,7 +2,7 @@ import React from "react"
 import { Button, Form, FormGroup, FormControl } from "react-bootstrap";
 import autobind from "react-autobind";
 
-import Badge from "../components/badge.js";
+import BadgeList from "../components/badgeList.js";
 
 class BadgeContainer extends React.Component {
   componentWillMount() {
@@ -65,23 +65,6 @@ class BadgeContainer extends React.Component {
       firstNameValue: ""
     });
   }
-  genBadges() {
-    return this.state.badges.map((badge, index) => {
-      return (
-        <div key={index}>
-          <Badge
-            firstName={badge.firstName}
-            lastName={badge.lastName}
-            placeOfBirth={badge.placeOfBirth}
-            email={badge.email}
-            phone={badge.phone}
-            favoriteFood={badge.favoriteFood}
-            about={badge.about}
-          />
-        </div>
-      )
-    });
-  }
   render() {
     return (
       <div>
@@ -115,7 +98,7 @@ class BadgeContainer extends React.Component {
           </FormGroup>
           <Button type="submit">Submit</Button>
         </Form>
-        {this.genBadges()}
+        <BadgeList badges={this.state.badges} />>
       </div>
     )
   }
