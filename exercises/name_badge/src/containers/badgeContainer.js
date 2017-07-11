@@ -15,6 +15,7 @@ class BadgeContainer extends React.Component {
             email={badge.email}
             phone={badge.phone}
             favoriteFood={badge.favoriteFood}
+            about={badge.about}
           />
         </div>
       )
