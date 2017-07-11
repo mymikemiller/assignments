@@ -20,32 +20,43 @@ class BadgeContainer extends React.Component {
         favoriteFood: "Chicken Strips",
         about: "A software engineer with a passion for learning"
       }],
-      firstNameValue: "",
-      lastNameValue: "",
-      emailValue: "",
-      placeOfBirthValue: "",
-      phoneValue: "",
-      favoriteFoodValue: "",
-      aboutValue: ""
+      input: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        placeOfBirth: "",
+        phone: "",
+        favoriteFood: "",
+        about: ""
+      }
     }
   }
-  inputFirstName(event) {
+  handleInput(key, event) {
+    console.log("handleInput");
+    let input = {
+      ...this.state.input
+    }
+    input[key] = event.target.value;
     this.setState({
       ...this.state,
-      firstNameValue: event.target.value
+      input: input
     });
   }
   submit() {
-    console.log("submit");
     let newBadge = {
-      firstName: this.state.firstNameValue,
-      lastName: this.state.lastNameValue,
-      email: this.state.email,
-      placeOfBirth: this.state.placeOfBirthValue,
-      phone: this.state.email,
-      favoriteFood: this.state.favoriteFoodValue,
-      about: this.state.aboutValue
+      firstName: this.state.input.firstName,
+      lastName: this.state.input.lastName,
+      phone: this.state.input.phone,
+      email: this.state.input.email,
+      placeOfBirth: this.state.input.placeOfBirth,
+      favoriteFood: this.state.input.favoriteFood,
+      about: this.state.input.about
     }
+    this.setState({
+      ...this.state,
+      input: {}
+    });
+
     let existingBadges = this.state.badges;
     existingBadges.push(newBadge);
     this.setState({
@@ -80,12 +91,27 @@ class BadgeContainer extends React.Component {
           this.submit();
         }}>
           <FormGroup>
-            <FormControl type="text" placeholder="First Name" onChange={this.props.handleInputFirstName} value={this.props.firstName} />
-            <FormControl type="text" placeholder="Last Name" />
-            <FormControl type="text" placeholder="Phone" />
-            <FormControl type="text" placeholder="Email" />
-            <FormControl type="text" placeholder="Place of Birth" />
-            <FormControl type="text" placeholder="Favorite Food" />
+            <FormControl type="text" placeholder="First Name"
+              onChange={(event) => { this.handleInput("firstName", event) }}
+              value={this.state.input.firstName} />
+            <FormControl type="text" placeholder="Last Name"
+              onChange={(event) => { this.handleInput("lastName", event) }}
+              value={this.state.input.lastName} />
+            <FormControl type="text" placeholder="Phone"
+              onChange={(event) => { this.handleInput("phone", event) }}
+              value={this.state.input.phone} />
+            <FormControl type="text" placeholder="Email"
+              onChange={(event) => { this.handleInput("email", event) }}
+              value={this.state.input.email} />
+            <FormControl type="text" placeholder="Place of Birth"
+              onChange={(event) => { this.handleInput("placeOfBirth", event) }}
+              value={this.state.input.placeOfBirth} />
+            <FormControl type="text" placeholder="Favorite Food"
+              onChange={(event) => { this.handleInput("favoriteFood", event) }}
+              value={this.state.input.favoriteFood} />
+            <textarea placeholder="About"
+              onChange={(event) => { this.handleInput("about", event) }}
+              value={this.state.input.about} />
           </FormGroup>
           <Button type="submit">Submit</Button>
         </Form>

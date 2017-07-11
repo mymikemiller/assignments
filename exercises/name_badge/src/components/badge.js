@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Row, Col, TextArea } from "react-bootstrap"
+import { Grid, Row, Col } from "react-bootstrap"
 require("./badge.css");
 
 class Badge extends React.Component {
@@ -9,7 +9,7 @@ class Badge extends React.Component {
     }
     let aboutTextArea = {
       border: "1px solid black",
-      minWidth: "100"
+      minWidth: "100%"
     }
     return (
       <div>
@@ -39,7 +39,7 @@ class Badge extends React.Component {
               </Row>
               <Row>
                 <Col xs={8} style={aboutTextArea}>
-                  <textarea readOnly>{this.props.about}</textarea>
+                  <textarea readOnly value={this.props.about}></textarea>
                 </Col>
               </Row>
             </Grid>
