@@ -1,8 +1,10 @@
 import React from "react"
 import { Button, Form, FormGroup, FormControl } from "react-bootstrap";
 import autobind from "react-autobind";
+import { Row, Col } from "react-bootstrap";
 
 import BadgeList from "../components/badgeList.js";
+require("./badgeContainer.css");
 
 class BadgeContainer extends React.Component {
   componentWillMount() {
@@ -67,39 +69,62 @@ class BadgeContainer extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Form onSubmit={(e) => {
-          console.log("onSubmit");
-          e.preventDefault();
-          this.submit();
-        }}>
-          <FormGroup>
-            <FormControl type="text" placeholder="First Name"
-              onChange={(event) => { this.handleInput("firstName", event) }}
-              value={this.state.input.firstName} />
-            <FormControl type="text" placeholder="Last Name"
-              onChange={(event) => { this.handleInput("lastName", event) }}
-              value={this.state.input.lastName} />
-            <FormControl type="text" placeholder="Phone"
-              onChange={(event) => { this.handleInput("phone", event) }}
-              value={this.state.input.phone} />
-            <FormControl type="text" placeholder="Email"
-              onChange={(event) => { this.handleInput("email", event) }}
-              value={this.state.input.email} />
-            <FormControl type="text" placeholder="Place of Birth"
-              onChange={(event) => { this.handleInput("placeOfBirth", event) }}
-              value={this.state.input.placeOfBirth} />
-            <FormControl type="text" placeholder="Favorite Food"
-              onChange={(event) => { this.handleInput("favoriteFood", event) }}
-              value={this.state.input.favoriteFood} />
-            <textarea placeholder="About"
-              onChange={(event) => { this.handleInput("about", event) }}
-              value={this.state.input.about} />
-          </FormGroup>
-          <Button type="submit">Submit</Button>
-        </Form>
-        <BadgeList badges={this.state.badges} />>
-      </div>
+      <Row>
+        <Col xs={8} xsOffset={2} className="formCol">
+          <Row>
+            <Form onSubmit={(e) => {
+              console.log("onSubmit");
+              e.preventDefault();
+              this.submit();
+            }}>
+              <Row className="inputForm">
+                <FormGroup>
+                  <Col xs={5} xsOffset={1}>
+                    <FormControl type="text" placeholder="First Name"
+                      onChange={(event) => { this.handleInput("firstName", event) }}
+                      value={this.state.input.firstName} />
+                  </Col>
+                  <Col xs={5} xsOffset={0}>
+                    <FormControl type="text" placeholder="Last Name"
+                      onChange={(event) => { this.handleInput("lastName", event) }}
+                      value={this.state.input.lastName} />
+                  </Col>
+                  <Col xs={5} xsOffset={1}>
+                    <FormControl type="text" placeholder="Phone"
+                      onChange={(event) => { this.handleInput("phone", event) }}
+                      value={this.state.input.phone} />
+                  </Col>
+                  <Col xs={5} xsOffset={0}>
+                    <FormControl type="text" placeholder="Email"
+                      onChange={(event) => { this.handleInput("email", event) }}
+                      value={this.state.input.email} />
+                  </Col>
+                  <Col xs={5} xsOffset={1}>
+                    <FormControl type="text" placeholder="Place of Birth"
+                      onChange={(event) => { this.handleInput("placeOfBirth", event) }}
+                      value={this.state.input.placeOfBirth} />
+                  </Col>
+                  <Col xs={5} xsOffset={0}>
+                    <FormControl type="text" placeholder="Favorite Food"
+                      onChange={(event) => { this.handleInput("favoriteFood", event) }}
+                      value={this.state.input.favoriteFood} />
+                  </Col>
+                  <Col xs={10} xsOffset={1}>
+                    <textarea placeholder="About"
+                      onChange={(event) => { this.handleInput("about", event) }}
+                      value={this.state.input.about} />
+                  </Col>
+                </FormGroup>
+                <Col xs={12} className="button">
+                  <Button type="submit">Submit</Button>
+                </Col>
+              </Row>
+            </Form>
+          </Row>
+        </Col>
+        <BadgeList badges={this.state.badges} />
+      </Row >
+
     )
   }
 }

@@ -2,6 +2,7 @@ import React from "react"
 import autobind from "react-autobind";
 
 import Badge from "../components/badge.js";
+require("./badgeList.css")
 
 class BadgeList extends React.Component {
   componentWillMount() {
@@ -12,13 +13,7 @@ class BadgeList extends React.Component {
       return (
         <div key={index}>
           <Badge
-            firstName={badge.firstName}
-            lastName={badge.lastName}
-            placeOfBirth={badge.placeOfBirth}
-            email={badge.email}
-            phone={badge.phone}
-            favoriteFood={badge.favoriteFood}
-            about={badge.about}
+            info={badge}
           />
         </div>
       )

@@ -1,3 +1,31 @@
 .row {
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+  border: 1px solid black;
+}
+.badgeLabelRow {
+    margin: -20px -20px 0px -20px;
+}
+.badge {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    font-weight: 400;
+    padding: 20px;
+}
+.badgeLabel {
+    background-color: grey;
+    color: white;
+    text-align: left;
+    border-radius: 7px;
+    padding: 2px;
 }
