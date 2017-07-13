@@ -1,0 +1,33 @@
+img {
+  width: 100%;
+}
+
+.meme-box {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: url("http://www.slate.com/content/dam/slate/blogs/browbeat/2014/02/10/wonka.jpg.CROP.promo-xlarge2.jpg");
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+}
+
+.top {
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.bottom {
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
