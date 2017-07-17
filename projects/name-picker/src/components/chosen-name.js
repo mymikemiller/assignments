@@ -4,7 +4,7 @@ require("../css/chosen-name.css");
 class ChosenName extends React.Component {
   render() {
     return (
-      <h1>The chosen name</h1>
+      <h1>The chosen name: {this.props.chosenName}</h1>
     )
   }
 }
