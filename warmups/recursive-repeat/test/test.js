@@ -1,6 +1,5 @@
 let Chai = require("chai");
 let assert = Chai.assert;
-let recRepeat = require("../index.js");
 let wtf = require("../index.js");
 
 describe("A recursive wtf function", () => {
